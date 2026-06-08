@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const gmailMessage = document.querySelector('.gmail');
     const messageAlert = document.getElementById('message-Alert');
     const img = document.querySelector('picture');
+    const header = document.querySelector('header');
 
     console.log();
 
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
             img.innerHTML = `<img alt="" src="email-img.png" style="width: 96px; height: 96px; object-fit: contain;">;`;
             sendlinkBtn.style.setProperty('margin-bottom' , '0');
             creatPasswordInstead.style.setProperty('display' , 'block');
+            header.style.setProperty('margin-bottom' , '100px');
 
         });
     }
