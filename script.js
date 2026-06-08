@@ -31,34 +31,6 @@ slider.addEventListener('scroll', updateButtonVisibility);
 
 setTimeout(updateButtonVisibility, 100);
 
-
-// const modal = document.querySelector('.open-temptale');
-// const overlay = document.getElementById('modalOverlay');
-// const closeBtn = document.querySelector('.template-btn');
-// const openTriggers = document.querySelectorAll('#maa-behen-img'); 
-
-// console.log(modal);
-// console.log(overlay);
-// console.log(closeBtn);
-// console.log(openTriggers);
-
-// openTriggers.forEach(trigger => {
-//     trigger.addEventListener('click', () => {
-//         modal.classList.add('active');
-//         overlay.classList.add('active');
-//         document.body.style.overflow = 'hidden';
-//     });
-// });
-
-// closeBtn.addEventListener('click', closeModal);
-// overlay.addEventListener('click', closeModal);
-
-// function closeModal() {
-//     modal.classList.remove('active');
-//     overlay.classList.remove('active');
-//     document.body.style.overflow = 'auto';
-// }
-
 const moviesData = {
     "maa-behen-img": {
         titleImg: "maabehen-title.webp",
@@ -190,3 +162,37 @@ function closeModal() {
     overlay.classList.remove('active');
     document.body.style.overflow = 'auto';
 }
+
+document.getElementById('getStartedBtn').addEventListener('click', function(e) {
+    e.preventDefault(); 
+    
+    const emailInput = document.getElementById('emailInput');
+    const errorMessage = document.getElementById('error-message');
+    const emailValue = emailInput.value.trim();
+    
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    
+    if (emailValue === "") {
+        showError("Email is required.");
+    } else if (!emailPattern.test(emailValue)) {
+        showError("Please enter a valid email address.");
+    } else {
+        errorMessage.style.display = "none";
+        emailInput.style.borderBottom = "";
+
+        localStorage.setItem('userEmail', emailValue);
+        
+        window.location.href = "getstart.html";
+    }
+
+    function showError(message) {
+        errorMessage.innerText = message;
+        errorMessage.style.display = "block";
+        emailInput.style.borderBottom = "2px solid #eb5757";
+
+        setTimeout(function() {
+            errorMessage.style.display = "none";
+            emailInput.style.borderBottom = "";
+        }, 3000);
+    }
+});

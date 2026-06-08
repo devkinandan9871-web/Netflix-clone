@@ -50,6 +50,7 @@ body {
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 50px;
+    cursor: pointer;
 }
 
 .singin-container button:hover {

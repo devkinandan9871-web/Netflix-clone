@@ -8,6 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <style>
+        #creat-password-instead:hover {
+            background-color: rgba(0, 0, 0, 0.084) !important;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -28,13 +34,26 @@
             <div class="singin-container">
                 <div class="sendlink-container">
                     <span class="step">step <b>1</b> of <b>3</b></span>
-                        <h1>Finish setting up your account</h1>
+                        <h1 id="message-Alert">Finish setting up your account</h1>
                     <span class="gmail">
-                        We will send a sign-up link to <b>name12345@gmail.com</b> so you can use Netflix without a password on any device at any time.
+                        We will send a sign-up link to <b id="email-address">name12345@gmail.com</b> so you can use Netflix without a password on any device at any time.
                     </span>
                 </div>
 
-                <button>Send Link</button>
+                <button id="send-link-btn">Send Link</button>
+                <button id="creat-password-instead" style="display: none; 
+                  margin-top: 15px;
+                  width: 100%;
+                  height: 50px;
+                  background-color: rgba(0, 0, 0, 0.132);
+                  border: none;
+                  border-radius: 5px;
+                  color: black;
+                  font-size: 25px;
+                  font-weight: bold;
+                  margin-bottom: 50px !important; cursor: pointer;">Create password instead
+                </button>
+
             </div>
         </div>
         </div>
@@ -64,5 +83,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="getstat.js"></script>
 </body>
 </html>
