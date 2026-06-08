@@ -30,3 +30,31 @@ leftBtn.addEventListener('click', () => {
 slider.addEventListener('scroll', updateButtonVisibility);
 
 setTimeout(updateButtonVisibility, 100);
+
+
+const modal = document.querySelector('.open-temptale');
+const overlay = document.getElementById('modalOverlay');
+const closeBtn = document.querySelector('.template-btn');
+const openTriggers = document.querySelectorAll('#maa-behen-img'); 
+
+console.log(modal);
+console.log(overlay);
+console.log(closeBtn);
+console.log(openTriggers);
+
+openTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+        modal.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+closeBtn.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+function closeModal() {
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
